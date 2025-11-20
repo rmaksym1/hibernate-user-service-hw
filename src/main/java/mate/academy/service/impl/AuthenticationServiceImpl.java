@@ -33,8 +33,8 @@ public class AuthenticationServiceImpl implements AuthenticationService {
     @Override
     public User register(String email, String password) throws RegistrationException {
         User user = new User();
-        user.setEmail("example@gmail.com");
-        user.setPassword("qwerty123456");
+        user.setEmail(email);
+        user.setPassword(password);
 
         return userService.add(user);
     }
