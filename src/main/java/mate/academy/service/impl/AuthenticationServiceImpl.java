@@ -21,8 +21,10 @@ public class AuthenticationServiceImpl implements AuthenticationService {
 
         User user = userOptional.orElse(null);
 
-        if (user == null || !HashUtil.hashPassword(password, user.getSalt()).equals(user.getPassword())) {
-            throw new AuthenticationException(email, new RuntimeException("Invalid email or password"));
+        if (user == null || !HashUtil.hashPassword(password,
+                user.getSalt()).equals(user.getPassword())) {
+            throw new AuthenticationException(email,
+                    new RuntimeException("Invalid email or password"));
         }
 
         return user;

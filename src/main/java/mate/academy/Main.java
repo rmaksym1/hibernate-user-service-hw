@@ -2,7 +2,6 @@ package mate.academy;
 
 import java.time.LocalDate;
 import java.time.LocalDateTime;
-
 import mate.academy.exception.AuthenticationException;
 import mate.academy.exception.RegistrationException;
 import mate.academy.lib.Injector;
@@ -23,7 +22,7 @@ public class Main {
         AuthenticationService authenticationService =
                 (AuthenticationService) injector.getInstance(AuthenticationService.class);
 
-        MovieService movieService =
+        final MovieService movieService =
                 (MovieService) injector.getInstance(MovieService.class);
 
         System.out.println(authenticationService.register(EMAIL, PASSWORD));
